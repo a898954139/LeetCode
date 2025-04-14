@@ -1,6 +1,5 @@
-# LeetCode
-## Template 
-```
+# LeetCode Note Template
+
 # Freqency array
 
 ## Intuition
@@ -9,4 +8,3 @@
 
 - Time complexity: O(n)
 - Space complexity: O(1)
-```

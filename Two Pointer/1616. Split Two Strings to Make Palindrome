@@ -1,0 +1,41 @@
+# Two pointer
+
+## Hint
+
+- Find the largest substring
+
+## Intuition
+
+- Since it has to be seperated into two parts, so one of the substring needs to be attach to the end of string, either first or last.
+- So base on this context we could know if first and last is both not equals, then it must not be palindrome.
+- In other words, if one of them is equals, then we can find the largest substring to be attached to the end of the string.
+
+## Complexity
+
+- Time complexity: O(n)
+- Space complexity: O(1)
+
+```psudo
+public class Solution {
+    public bool CheckPalindromeFormation(string a, string b) {
+        var ap = 0;
+        var bp = b.length -1;
+        return Check(ap, bp) 
+            ? true 
+            : Check(bp, ap) 
+                ? true 
+                : false;
+
+        bool Check(int ap, int bp)
+        {
+            // case1 full palindrome
+            // case2 1 palindrome
+            // case3 n < full palindrome
+            while(ap < bp && a[ap] == b[bp]){
+                ap++;
+                bp--;
+            }
+        }
+    }
+}
+```

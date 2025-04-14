@@ -1,0 +1,31 @@
+# Sliding Window
+
+## Intuition
+
+- Since we have k times to swap flip the 0, so there's a constain here that if the count is greater than k it is invalid, we should move the window to the right.
+- When the window is valid we restart max comparing.
+
+## Complexity
+
+- Time Complexity will be iterate all the array, so it will be O(n), and the worst case is all is zero so I have to shrink all the zero from left to right, so it will be O(n), and the composite of time complexity would be O(2n) -> O(n).
+- Space complxity since we are always using two pointer, it is constant so it will be O(1).
+- Time complexity: O(n)
+- Space complexity: O(1)
+
+```csharp
+public int LongestOnes(int[] nums, int k) {
+    int left = 0;
+    int right = 0;
+    int count = 0;
+    int max = 0;
+    while(right<nums.Length){
+        if(nums[right]==0) count++;
+        while(count>k){
+            if(nums[left]==0) count--;
+            left++;
+        }
+        max = Math.Max(max, right-left+1);
+        right++;
+    }
+    return max;
+}
