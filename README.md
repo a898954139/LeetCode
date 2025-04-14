@@ -1,10 +1,1 @@
-# LeetCode Note Template
-
-# Freqency array
-
-## Intuition
-
-## Complexity
-
-- Time complexity: O(n)
-- Space complexity: O(1)
+This is the solution note of mine for [LeetCode](https://leetcode.com/)
